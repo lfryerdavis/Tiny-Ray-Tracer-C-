@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D8C89D926F6C18B001D484B /* utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D8C89D726F6C18B001D484B /* utilities.cpp */; };
 		1DBF7102267935220011A618 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DBF7101267935220011A618 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1D8C89D726F6C18B001D484B /* utilities.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = utilities.cpp; sourceTree = "<group>"; };
+		1D8C89D826F6C18B001D484B /* utilities.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = utilities.hpp; sourceTree = "<group>"; };
 		1DBF70FE267935220011A618 /* Tiny Ray Tracer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Tiny Ray Tracer"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DBF7101267935220011A618 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				1DBF7101267935220011A618 /* main.cpp */,
+				1D8C89D726F6C18B001D484B /* utilities.cpp */,
+				1D8C89D826F6C18B001D484B /* utilities.hpp */,
 			);
 			path = "Tiny Ray Tracer";
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D8C89D926F6C18B001D484B /* utilities.cpp in Sources */,
 				1DBF7102267935220011A618 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
