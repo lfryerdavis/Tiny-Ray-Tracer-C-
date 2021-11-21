@@ -8,6 +8,7 @@
 #include <iostream>
 #include <vector>
 #include "utilities.hpp"
+#include "imgWriter.hpp"
 
 using namespace std;
 
@@ -31,5 +32,9 @@ int main(int argc, const char * argv[])
     }
     
     cout << img << endl;
+    
+    imgWriter imgWrite("testFile.pbm", rows, cols);
+    imgWrite.updateImage(img);
+    
     return 0;
 }
