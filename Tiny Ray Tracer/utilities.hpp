@@ -39,6 +39,7 @@ struct dtuple3
     void multiplyBy(double scalingValue);
     void add(dtuple3 rhs);
     void subtract(dtuple3 rhs);
+    bool isEqual(dtuple3 rhs);
 };
 
 struct dtuple4
@@ -53,6 +54,7 @@ struct dtuple4
     void multiplyBy(double scalingValue);
     void add(dtuple4 rhs);
     void subtract(dtuple4 rhs);
+    bool isEqual(dtuple4 rhs);
 };
 
 typedef vector<int> ivec;
