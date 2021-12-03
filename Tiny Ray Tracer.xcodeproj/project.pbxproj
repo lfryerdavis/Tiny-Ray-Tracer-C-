@@ -23,6 +23,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		1DDBEA1F2759B35C00074A4E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		1DDBEA2A2759B3C300074A4E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -34,10 +52,26 @@
 		1DBC2723274855FE00BD5ABD /* imgWriter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = imgWriter.cpp; sourceTree = "<group>"; };
 		1DBF70FE267935220011A618 /* Tiny Ray Tracer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Tiny Ray Tracer"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DBF7101267935220011A618 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		1DDBEA212759B35C00074A4E /* Unit Tests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Unit Tests"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DDBEA2C2759B3C300074A4E /* Unit Testing */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Unit Testing"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1DBF70FB267935220011A618 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1DDBEA1E2759B35C00074A4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1DDBEA292759B3C300074A4E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -59,6 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				1DBF70FE267935220011A618 /* Tiny Ray Tracer */,
+				1DDBEA212759B35C00074A4E /* Unit Tests */,
+				1DDBEA2C2759B3C300074A4E /* Unit Testing */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,16 +133,57 @@
 			productReference = 1DBF70FE267935220011A618 /* Tiny Ray Tracer */;
 			productType = "com.apple.product-type.tool";
 		};
+		1DDBEA202759B35C00074A4E /* Unit Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DDBEA252759B35C00074A4E /* Build configuration list for PBXNativeTarget "Unit Tests" */;
+			buildPhases = (
+				1DDBEA1D2759B35C00074A4E /* Sources */,
+				1DDBEA1E2759B35C00074A4E /* Frameworks */,
+				1DDBEA1F2759B35C00074A4E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Unit Tests";
+			productName = "Unit Tests";
+			productReference = 1DDBEA212759B35C00074A4E /* Unit Tests */;
+			productType = "com.apple.product-type.tool";
+		};
+		1DDBEA2B2759B3C300074A4E /* Unit Testing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DDBEA302759B3C300074A4E /* Build configuration list for PBXNativeTarget "Unit Testing" */;
+			buildPhases = (
+				1DDBEA282759B3C300074A4E /* Sources */,
+				1DDBEA292759B3C300074A4E /* Frameworks */,
+				1DDBEA2A2759B3C300074A4E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Unit Testing";
+			productName = "Unit Testing";
+			productReference = 1DDBEA2C2759B3C300074A4E /* Unit Testing */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		1DBF70F6267935220011A618 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1310;
 				TargetAttributes = {
 					1DBF70FD267935220011A618 = {
 						CreatedOnToolsVersion = 12.5;
+					};
+					1DDBEA202759B35C00074A4E = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					1DDBEA2B2759B3C300074A4E = {
+						CreatedOnToolsVersion = 13.1;
 					};
 				};
 			};
@@ -124,6 +201,8 @@
 			projectRoot = "";
 			targets = (
 				1DBF70FD267935220011A618 /* Tiny Ray Tracer */,
+				1DDBEA202759B35C00074A4E /* Unit Tests */,
+				1DDBEA2B2759B3C300074A4E /* Unit Testing */,
 			);
 		};
 /* End PBXProject section */
@@ -137,6 +216,20 @@
 				1D8C89D926F6C18B001D484B /* utilities.cpp in Sources */,
 				1D2CA6BE27302E2800E3634B /* pngWriter.cpp in Sources */,
 				1DBF7102267935220011A618 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1DDBEA1D2759B35C00074A4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1DDBEA282759B3C300074A4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +369,60 @@
 			};
 			name = Release;
 		};
+		1DDBEA262759B35C00074A4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 883SRFP343;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		1DDBEA272759B35C00074A4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 883SRFP343;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		1DDBEA312759B3C300074A4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 883SRFP343;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1DDBEA322759B3C300074A4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 883SRFP343;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -293,6 +440,24 @@
 			buildConfigurations = (
 				1DBF7106267935220011A618 /* Debug */,
 				1DBF7107267935220011A618 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DDBEA252759B35C00074A4E /* Build configuration list for PBXNativeTarget "Unit Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DDBEA262759B35C00074A4E /* Debug */,
+				1DDBEA272759B35C00074A4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DDBEA302759B3C300074A4E /* Build configuration list for PBXNativeTarget "Unit Testing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DDBEA312759B3C300074A4E /* Debug */,
+				1DDBEA322759B3C300074A4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

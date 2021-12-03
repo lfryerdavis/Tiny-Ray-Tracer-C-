@@ -26,6 +26,25 @@ struct colour
     colour(uint8 Red, uint8 Green, uint8 Blue, uint8 Alpha) {red = Red; green = Green; blue = Blue; alpha = Alpha;};
 };
 
+struct dtuple3
+{
+    double x;
+    double y;
+    double z;
+    
+    dtuple3(double X, double Y, double Z) {x = X; y = Y; z = Z;};
+};
+
+struct dtuple4
+{
+    double x;
+    double y;
+    double z;
+    double w;
+    
+    dtuple4(double X, double Y, double Z, double W) {x = X; y = Y; z = Z; w = W;};
+};
+
 typedef vector<int> ivec;
 typedef vector<ivec> imatrix;
 
@@ -34,6 +53,9 @@ typedef vector<i8vec> i8matrix;
 
 typedef vector<colour> colourvec;
 typedef vector<colourvec> colourmatrix;
+
+ostream &operator<<(ostream &stream, dtuple3 &obj);
+ostream &operator<<(ostream &stream, dtuple4 &obj);
 
 ostream &operator<<(ostream &stream, ivec &obj);
 ostream &operator<<(ostream &stream, imatrix &obj);

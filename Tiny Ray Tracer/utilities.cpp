@@ -7,6 +7,24 @@
 
 #include "utilities.hpp"
 
+ostream &operator<<(ostream &stream, dtuple3 &obj)
+{
+    stream << "[ ";
+    stream << obj.x << " " << obj.y << " " << obj.z << " ";
+    
+    stream << "]";
+    return stream;
+}
+
+ostream &operator<<(ostream &stream, dtuple4 &obj)
+{
+    stream << "[ ";
+    stream << obj.x << " " << obj.y << " " << obj.z << " " << obj.w << " ";
+    
+    stream << "]";
+    return stream;
+}
+
 ostream &operator<<(ostream &stream, ivec &obj)
 {
     stream << "[ ";
