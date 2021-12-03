@@ -37,9 +37,9 @@ void testUtilities()
     lhs4.subtract(rhs4);
     cout << "lhs4 - rhs4 = " << lhs4 << " : should be [ 2 0 -1 -2]" << endl;
     lhs4.multiplyBy(1.5);
-    cout << "lhs4.multiplyBy(1.5) = " << lhs4 << " : should be [ 3 0 -1.5, -3.5]" << endl;
+    cout << "lhs4.multiplyBy(1.5) = " << lhs4 << " : should be [ 3 0 -1.5, -3]" << endl;
     lhs4.negate();
-    cout << "lhs4.negate() = " << lhs4 << " : should be [ -3 0 1.5 3.5]" << endl;
+    cout << "lhs4.negate() = " << lhs4 << " : should be [ -3 0 1.5 3]" << endl;
 
     cout << endl << "*********************" << endl;
     cout << "End Testing Utilities" << endl;
