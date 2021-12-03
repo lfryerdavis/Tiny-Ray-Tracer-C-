@@ -7,8 +7,12 @@
 
 #include "utilities.hpp"
 #include <cmath>
+#include <iostream>
+#include <iomanip>
 
-double epsilon = 0.0000001;
+using namespace std;
+
+double epsilon = 0.000000001;
 
 void testUtilities()
 {
@@ -32,8 +36,8 @@ void testUtilities()
     lhs.negate();
     cout << "lhs.negate() = " << lhs << " : should be [ -3 0 1.5]" << endl;
     cout << lhs << " is equal to " << rhs << " " << boolalpha << lhs.isEqual(rhs) << " : should be false" << endl;
-    dtuple3 testd3(-3,0,1.50000001);
-    cout << lhs << " is equal to " << testd3 << " " << boolalpha << lhs.isEqual(testd3) << " : should be true" << endl;
+    dtuple3 testd3(-3,0,1.5 + epsilon/2);
+    cout << lhs << " is equal to " << setprecision(11) << testd3 << " " << boolalpha << lhs.isEqual(testd3) << " : should be true" << endl;
 
     cout << endl;
 
@@ -47,8 +51,8 @@ void testUtilities()
     lhs4.negate();
     cout << "lhs4.negate() = " << lhs4 << " : should be [ -3 0 1.5 3]" << endl;
     cout << lhs4 << " is equal to " << rhs4 << " " << boolalpha << lhs4.isEqual(rhs4) << " : should be false" << endl;
-    dtuple4 testd4(-3,0,1.50000001, 3);
-    cout << lhs4 << " is equal to " << testd4 << " " << boolalpha << lhs4.isEqual(testd4) << " : should be true" << endl;
+    dtuple4 testd4(-3,0,1.5 + epsilon/2, 3);
+    cout << lhs4 << " is equal to " << setprecision(11) << testd4 << " " << boolalpha << lhs4.isEqual(testd4) << " : should be true" << endl;
 
     cout << endl << "*********************" << endl;
     cout << "End Testing Utilities" << endl;
