@@ -9,12 +9,41 @@
 
 void testUtilities()
 {
+    cout << endl << "*********************" << endl;
+    cout << "Testing Utilities" << endl;
+    cout << "*********************" << endl << endl;
+
     // print dtuples
     dtuple3 dt3test(1, 2, 3);
     dtuple4 dt4test(1, 2, 3, 4);
     
-    cout << "d3test = " << dt3test << " d4test = " << dt4test << endl;
+    cout << "d3test = " << dt3test << " d4test = " << dt4test << " : should be [ 1 2 3 ] and [ 1 2 3 4 ]" << endl << endl;
 
+    dtuple3 lhs(1, 2, 3);
+    dtuple3 rhs(-1, 2, 4);
+
+    lhs.subtract(rhs);
+    cout << "lhs - rhs = " << lhs << " : should be [ 2 0 -1]" << endl;
+    lhs.multiplyBy(1.5);
+    cout << "lhs.multiplyBy(1.5) = " << lhs << " : should be [ 3 0 -1.5]" << endl;
+    lhs.negate();
+    cout << "lhs.negate() = " << lhs << " : should be [ -3 0 1.5]" << endl;
+
+    cout << endl;
+
+    dtuple4 lhs4(1, 2, 3, 4);
+    dtuple4 rhs4(-1, 2, 4, 6);
+
+    lhs4.subtract(rhs4);
+    cout << "lhs4 - rhs4 = " << lhs4 << " : should be [ 2 0 -1 -2]" << endl;
+    lhs4.multiplyBy(1.5);
+    cout << "lhs4.multiplyBy(1.5) = " << lhs4 << " : should be [ 3 0 -1.5, -3.5]" << endl;
+    lhs4.negate();
+    cout << "lhs4.negate() = " << lhs4 << " : should be [ -3 0 1.5 3.5]" << endl;
+
+    cout << endl << "*********************" << endl;
+    cout << "End Testing Utilities" << endl;
+    cout << "*********************" << endl << endl;
 }
 
 ostream &operator<<(ostream &stream, dtuple3 &obj)
@@ -128,26 +157,18 @@ void dtuple3::multiplyBy(double scalingValue)
     z *= scalingValue;
 }
 
-dtuple3 dtuple3::add(dtuple3 lhs, dtuple3 rhs)
+void dtuple3::add(dtuple3 rhs)
 {
-    dtuple3 result = lhs;
-    
-    result.x = lhs.x + rhs.x;
-    result.y = lhs.y + rhs.y;
-    result.z = lhs.z + rhs.z;
-
-    return result;
+    x += rhs.x;
+    y += rhs.y;
+    z += rhs.z;
 }
 
-dtuple3 dtuple3::subtract(dtuple3 lhs, dtuple3 rhs)
+void dtuple3::subtract(dtuple3 rhs)
 {
-    dtuple3 result = lhs;
-    
-    result.x = lhs.x - rhs.x;
-    result.y = lhs.y - rhs.y;
-    result.z = lhs.z - rhs.z;
-
-    return result;
+    x -= rhs.x;
+    y -= rhs.y;
+    z -= rhs.z;
 }
 
 void dtuple4::negate()
@@ -166,27 +187,19 @@ void dtuple4::multiplyBy(double scalingValue)
     w *= scalingValue;
 }
 
-dtuple4 dtuple4::add(dtuple4 lhs, dtuple4 rhs)
+void dtuple4::add(dtuple4 rhs)
 {
-    dtuple4 result = lhs;
-    
-    result.x = lhs.x + rhs.x;
-    result.y = lhs.y + rhs.y;
-    result.z = lhs.z + rhs.z;
-    result.w = lhs.w + rhs.w;
-
-    return result;
+    x += rhs.x;
+    y += rhs.y;
+    z += rhs.z;
+    w += rhs.w;
 }
 
-dtuple4 dtuple4::subtract(dtuple4 lhs, dtuple4 rhs)
+void dtuple4::subtract(dtuple4 rhs)
 {
-    dtuple4 result = lhs;
-    
-    result.x = lhs.x - rhs.x;
-    result.y = lhs.y - rhs.y;
-    result.z = lhs.z - rhs.z;
-    result.w = lhs.w - rhs.w;
-
-    return result;
+    x -= rhs.x;
+    y -= rhs.y;
+    z -= rhs.z;
+    w -= rhs.w;
 }
 

@@ -37,8 +37,8 @@ struct dtuple3
     dtuple3(double X, double Y, double Z) {x = X; y = Y; z = Z;};
     void negate();
     void multiplyBy(double scalingValue);
-    dtuple3 add(dtuple3 lhs, dtuple3 rhs);
-    dtuple3 subtract(dtuple3 lhs, dtuple3 rhs);
+    void add(dtuple3 rhs);
+    void subtract(dtuple3 rhs);
 };
 
 struct dtuple4
@@ -51,8 +51,8 @@ struct dtuple4
     dtuple4(double X, double Y, double Z, double W) {x = X; y = Y; z = Z; w = W;};
     void negate();
     void multiplyBy(double scalingValue);
-    dtuple4 add(dtuple4 lhs, dtuple4 rhs);
-    dtuple4 subtract(dtuple4 lhs, dtuple4 rhs);
+    void add(dtuple4 rhs);
+    void subtract(dtuple4 rhs);
 };
 
 typedef vector<int> ivec;
