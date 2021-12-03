@@ -20,11 +20,8 @@ colour black(0,0,0,0);
 
 int main(int argc, const char * argv[])
 {
-    dtuple3 dt3test(1, 2, 3);
-    dtuple4 dt4test(1, 2, 3, 4);
+    testUtilities();
     
-    cout << "d3test = " << dt3test << " d4test = " << dt4test << endl;
-
     for (uint32 row = 0; row < rows; row++)
     {
         colourvec imgRow;

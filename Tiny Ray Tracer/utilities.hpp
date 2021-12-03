@@ -13,6 +13,8 @@
 
 using namespace std;
 
+void testUtilities();
+
 typedef unsigned int uint32;
 typedef unsigned char uint8;
 
@@ -33,6 +35,10 @@ struct dtuple3
     double z;
     
     dtuple3(double X, double Y, double Z) {x = X; y = Y; z = Z;};
+    void negate();
+    void multiplyBy(double scalingValue);
+    dtuple3 add(dtuple3 lhs, dtuple3 rhs);
+    dtuple3 subtract(dtuple3 lhs, dtuple3 rhs);
 };
 
 struct dtuple4
@@ -43,6 +49,10 @@ struct dtuple4
     double w;
     
     dtuple4(double X, double Y, double Z, double W) {x = X; y = Y; z = Z; w = W;};
+    void negate();
+    void multiplyBy(double scalingValue);
+    dtuple4 add(dtuple4 lhs, dtuple4 rhs);
+    dtuple4 subtract(dtuple4 lhs, dtuple4 rhs);
 };
 
 typedef vector<int> ivec;

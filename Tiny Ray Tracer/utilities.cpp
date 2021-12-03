@@ -7,6 +7,16 @@
 
 #include "utilities.hpp"
 
+void testUtilities()
+{
+    // print dtuples
+    dtuple3 dt3test(1, 2, 3);
+    dtuple4 dt4test(1, 2, 3, 4);
+    
+    cout << "d3test = " << dt3test << " d4test = " << dt4test << endl;
+
+}
+
 ostream &operator<<(ostream &stream, dtuple3 &obj)
 {
     stream << "[ ";
@@ -102,5 +112,81 @@ ostream &operator<<(ostream &stream, colourmatrix &obj)
     stream << "]" << endl;
 
     return stream;
+}
+
+void dtuple3::negate()
+{
+    x = -x;
+    y = -y;
+    z = -z;
+}
+
+void dtuple3::multiplyBy(double scalingValue)
+{
+    x *= scalingValue;
+    y *= scalingValue;
+    z *= scalingValue;
+}
+
+dtuple3 dtuple3::add(dtuple3 lhs, dtuple3 rhs)
+{
+    dtuple3 result = lhs;
+    
+    result.x = lhs.x + rhs.x;
+    result.y = lhs.y + rhs.y;
+    result.z = lhs.z + rhs.z;
+
+    return result;
+}
+
+dtuple3 dtuple3::subtract(dtuple3 lhs, dtuple3 rhs)
+{
+    dtuple3 result = lhs;
+    
+    result.x = lhs.x - rhs.x;
+    result.y = lhs.y - rhs.y;
+    result.z = lhs.z - rhs.z;
+
+    return result;
+}
+
+void dtuple4::negate()
+{
+    x = -x;
+    y = -y;
+    z = -z;
+    w = -w;
+}
+
+void dtuple4::multiplyBy(double scalingValue)
+{
+    x *= scalingValue;
+    y *= scalingValue;
+    z *= scalingValue;
+    w *= scalingValue;
+}
+
+dtuple4 dtuple4::add(dtuple4 lhs, dtuple4 rhs)
+{
+    dtuple4 result = lhs;
+    
+    result.x = lhs.x + rhs.x;
+    result.y = lhs.y + rhs.y;
+    result.z = lhs.z + rhs.z;
+    result.w = lhs.w + rhs.w;
+
+    return result;
+}
+
+dtuple4 dtuple4::subtract(dtuple4 lhs, dtuple4 rhs)
+{
+    dtuple4 result = lhs;
+    
+    result.x = lhs.x - rhs.x;
+    result.y = lhs.y - rhs.y;
+    result.z = lhs.z - rhs.z;
+    result.w = lhs.w - rhs.w;
+
+    return result;
 }
 
