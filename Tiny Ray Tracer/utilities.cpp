@@ -38,6 +38,8 @@ void testUtilities()
     cout << lhs << " is equal to " << rhs << " " << boolalpha << lhs.isEqual(rhs) << " : should be false" << endl;
     dtuple3 testd3(-3,0,1.5 + epsilon/2);
     cout << lhs << " is equal to " << setprecision(11) << testd3 << " " << boolalpha << lhs.isEqual(testd3) << " : should be true" << endl;
+    testd3.normalize();
+    cout << lhs << " normalized is equal to " << testd3 << " : should be [ -0.89442719094 0 0.44721359562 ]" << endl;
 
     cout << endl;
 
@@ -53,6 +55,8 @@ void testUtilities()
     cout << lhs4 << " is equal to " << rhs4 << " " << boolalpha << lhs4.isEqual(rhs4) << " : should be false" << endl;
     dtuple4 testd4(-3,0,1.5 + epsilon/2, 3);
     cout << lhs4 << " is equal to " << setprecision(11) << testd4 << " " << boolalpha << lhs4.isEqual(testd4) << " : should be true" << endl;
+    testd4.normalize();
+    cout << lhs << " normalized is equal to " << testd4 << " : should be [-0.66666666664 0 0.33333333343 0.66666666664 ]" << endl;
 
     cout << endl << "*********************" << endl;
     cout << "End Testing Utilities" << endl;
@@ -184,6 +188,21 @@ void dtuple3::subtract(dtuple3 rhs)
     z -= rhs.z;
 }
 
+double dtuple3::magnitude()
+{
+    return sqrt(x*x+y*y+z*z);
+}
+
+void dtuple3::normalize()
+{
+    if ( x == 0 && y == 0 && z == 0)
+        return;
+    double scale = magnitude();
+    x /= scale;
+    y /= scale;
+    z /= scale;
+}
+
 bool dtuple3::isEqual(dtuple3 rhs)
 {
     return (fabs(x - rhs.x) < epsilon) && (fabs(y - rhs.y) < epsilon) && (fabs(z - rhs.z) < epsilon);
@@ -219,6 +238,22 @@ void dtuple4::subtract(dtuple4 rhs)
     y -= rhs.y;
     z -= rhs.z;
     w -= rhs.w;
+}
+
+double dtuple4::magnitude()
+{
+    return sqrt(x*x+y*y+z*z+w*w);
+}
+
+void dtuple4::normalize()
+{
+    if ( x == 0 && y == 0 && z == 0 && w == 0)
+        return;
+    double scale = magnitude();
+    x /= scale;
+    y /= scale;
+    z /= scale;
+    w /= scale;
 }
 
 bool dtuple4::isEqual(dtuple4 rhs)
