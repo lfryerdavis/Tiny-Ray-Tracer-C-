@@ -42,7 +42,10 @@ void testUtilities()
     cout << lhs << " normalized is equal to " << testd3 << " : should be [ -0.89442719094 0 0.44721359562 ]" << endl;
 
     dtuple3 lhs2(1, -2, 3), rhs2(3, 0, 1);
+    dtuple3 cross(0,0,0);
+    cross = lhs2.cross(rhs2);
     cout << lhs2 << " . " << rhs2 << " equals " << lhs2.dot(rhs2) << " : should be 6" << endl;
+    cout << lhs2 << " x " << rhs2 << " equals " << cross << " : should be [ -2 8 6 ]" << endl;
     cout << endl;
 
     dtuple4 lhs4(1, 2, 3, 4);
@@ -216,6 +219,17 @@ double dtuple3::dot(dtuple3 rhs)
 {
     return x*rhs.x + y*rhs.y + z*rhs.z;
 }
+
+dtuple3 dtuple3::cross(dtuple3 rhs)
+{
+    dtuple3 result(0,0,0);
+    result.x = y*rhs.z - z*rhs.y;
+    result.y = z*rhs.x - x*rhs.z;
+    result.z = x*rhs.y - y*rhs.x;
+
+    return result;
+}
+
 
 void dtuple4::negate()
 {

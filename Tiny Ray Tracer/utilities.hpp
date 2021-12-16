@@ -43,6 +43,7 @@ struct dtuple3
     void normalize();
     bool isEqual(dtuple3 rhs);
     double dot(dtuple3 rhs);
+    dtuple3 cross(dtuple3 rhs);
 };
 
 struct dtuple4
