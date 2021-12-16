@@ -42,6 +42,7 @@ struct dtuple3
     double magnitude();
     void normalize();
     bool isEqual(dtuple3 rhs);
+    double dot(dtuple3 rhs);
 };
 
 struct dtuple4
@@ -59,6 +60,7 @@ struct dtuple4
     double magnitude();
     void normalize();
     bool isEqual(dtuple4 rhs);
+    double dot(dtuple4 rhs);
 };
 
 typedef vector<int> ivec;
