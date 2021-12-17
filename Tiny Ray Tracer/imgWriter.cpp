@@ -50,5 +50,5 @@ void imgWriter::writeHeader()
     if (!mOutputFile.is_open())
         cout << "Error: could not open " << mOutputFileName << endl;
     mOutputFile << "P3" << endl;
-    mOutputFile << int(mRows) << " " << int(mCols) << " " << "255" << endl;
+    mOutputFile << int(mCols) << " " << int(mRows) << " " << "255" << endl;
 }

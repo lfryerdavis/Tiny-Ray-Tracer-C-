@@ -12,8 +12,8 @@
 
 using namespace std;
 
-uint32 rows = 4;
-uint32 cols = 8;
+uint32 rows = 800;
+uint32 cols = 1200;
 
 colourmatrix img;
 colour black(0, 0, 0);
@@ -29,13 +29,13 @@ int main(int argc, const char * argv[])
         colourvec imgRow;
         for (uint32 col = 0; col < cols; col++)
         {
-            colour temp = midgrey;
+            colour temp((double) row / (double) rows, (double) col / (double) cols, (double) row / (double) rows, 0);
             imgRow.push_back(temp);
         }
         img.push_back(imgRow);
     }
     
-    cout << img << endl;
+    // cout << img << endl;
     
     imgWriter imgWrite("testFile.pbm", rows, cols);
     imgWrite.updateImage(img);
