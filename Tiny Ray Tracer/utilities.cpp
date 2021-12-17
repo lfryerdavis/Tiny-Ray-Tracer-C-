@@ -42,7 +42,7 @@ void testUtilities()
     cout << lhs << " normalized is equal to " << testd3 << " : should be [ -0.89442719094 0 0.44721359562 ]" << endl;
 
     dtuple3 lhs2(1, -2, 3), rhs2(3, 0, 1);
-    dtuple3 cross(0,0,0);
+    dtuple3 cross;
     cross = lhs2.cross(rhs2);
     cout << lhs2 << " . " << rhs2 << " equals " << lhs2.dot(rhs2) << " : should be 6" << endl;
     cout << lhs2 << " x " << rhs2 << " equals " << cross << " : should be [ -2 8 6 ]" << endl;
@@ -138,7 +138,7 @@ ostream &operator<<(ostream &stream, i8matrix &obj)
 
 ostream &operator<<(ostream &stream, colour &obj)
 {
-    stream << "( " << int(obj.red) << ", " << int(obj.green) << ", " << int(obj.blue) << ", " << int(obj.alpha) << ")";
+    stream << "( " << int(obj.red*255) << ", " << int(obj.green*255) << ", " << int(obj.blue*255) << ", " << int(obj.alpha*255) << ")";
 
     return stream;
 }

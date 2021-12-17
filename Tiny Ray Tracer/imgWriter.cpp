@@ -37,7 +37,7 @@ void imgWriter::updateImage(const colourmatrix &image)
         for (int col = 0; col < mCols; col++)
         {
             colour currColour = image[row][col];
-            mOutputFile << int(currColour.red) << " " << int(currColour.green) << " " << int(currColour.blue) << endl;
+            mOutputFile << int(currColour.red*255) << " " << int(currColour.green*255) << " " << int(currColour.blue*255) << endl;
         }
     }
 }

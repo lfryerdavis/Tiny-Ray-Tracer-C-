@@ -16,18 +16,20 @@ uint32 rows = 4;
 uint32 cols = 8;
 
 colourmatrix img;
-colour black(0,0,0,0);
+colour black(0, 0, 0);
+colour white(1, 1, 1);
+colour midgrey(0.5, 0.5, 0.5);
 
 int main(int argc, const char * argv[])
 {
-    testUtilities();
+    // testUtilities();
     
     for (uint32 row = 0; row < rows; row++)
     {
         colourvec imgRow;
         for (uint32 col = 0; col < cols; col++)
         {
-            colour temp = black;
+            colour temp = midgrey;
             imgRow.push_back(temp);
         }
         img.push_back(imgRow);

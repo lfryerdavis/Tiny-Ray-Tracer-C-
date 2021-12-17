@@ -20,12 +20,12 @@ typedef unsigned char uint8;
 
 struct colour
 {
-    uint8 red;
-    uint8 green;
-    uint8 blue;
-    uint8 alpha;
+    double red;
+    double green;
+    double blue;
+    double alpha;
     
-    colour(uint8 Red, uint8 Green, uint8 Blue, uint8 Alpha) {red = Red; green = Green; blue = Blue; alpha = Alpha;};
+    colour(double Red = 0, double Green = 0, double Blue = 0, double Alpha = 0) {red = Red; green = Green; blue = Blue; alpha = Alpha;};
 };
 
 struct dtuple3
@@ -34,7 +34,7 @@ struct dtuple3
     double y;
     double z;
     
-    dtuple3(double X, double Y, double Z) {x = X; y = Y; z = Z;};
+    dtuple3(double X = 0, double Y = 0, double Z = 0) {x = X; y = Y; z = Z;};
     void negate();
     void multiplyBy(double scalingValue);
     void add(dtuple3 rhs);
@@ -53,7 +53,7 @@ struct dtuple4
     double z;
     double w;
     
-    dtuple4(double X, double Y, double Z, double W) {x = X; y = Y; z = Z; w = W;};
+    dtuple4(double X = 0, double Y = 0, double Z = 0, double W = 0) {x = X; y = Y; z = Z; w = W;};
     void negate();
     void multiplyBy(double scalingValue);
     void add(dtuple4 rhs);
