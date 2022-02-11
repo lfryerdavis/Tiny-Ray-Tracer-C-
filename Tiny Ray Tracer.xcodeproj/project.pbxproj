@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1D2CA6BE27302E2800E3634B /* pngWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D2CA6BC27302E2800E3634B /* pngWriter.cpp */; };
 		1D8C89D926F6C18B001D484B /* utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D8C89D726F6C18B001D484B /* utilities.cpp */; };
+		1DB830C827B6D278004F68EC /* canvas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB830C627B6D278004F68EC /* canvas.cpp */; };
 		1DBC2724274855FE00BD5ABD /* imgWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DBC2723274855FE00BD5ABD /* imgWriter.cpp */; };
 		1DBF7102267935220011A618 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DBF7101267935220011A618 /* main.cpp */; };
 /* End PBXBuildFile section */
@@ -48,6 +49,8 @@
 		1D2CA6BD27302E2800E3634B /* pngWriter.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = pngWriter.hpp; sourceTree = "<group>"; };
 		1D8C89D726F6C18B001D484B /* utilities.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = utilities.cpp; sourceTree = "<group>"; };
 		1D8C89D826F6C18B001D484B /* utilities.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = utilities.hpp; sourceTree = "<group>"; };
+		1DB830C627B6D278004F68EC /* canvas.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = canvas.cpp; sourceTree = "<group>"; };
+		1DB830C727B6D278004F68EC /* canvas.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = canvas.hpp; sourceTree = "<group>"; };
 		1DBC2722274855FE00BD5ABD /* imgWriter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = imgWriter.hpp; sourceTree = "<group>"; };
 		1DBC2723274855FE00BD5ABD /* imgWriter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = imgWriter.cpp; sourceTree = "<group>"; };
 		1DBF70FE267935220011A618 /* Tiny Ray Tracer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Tiny Ray Tracer"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +112,8 @@
 				1D8C89D826F6C18B001D484B /* utilities.hpp */,
 				1D2CA6BC27302E2800E3634B /* pngWriter.cpp */,
 				1D2CA6BD27302E2800E3634B /* pngWriter.hpp */,
+				1DB830C627B6D278004F68EC /* canvas.cpp */,
+				1DB830C727B6D278004F68EC /* canvas.hpp */,
 			);
 			path = "Tiny Ray Tracer";
 			sourceTree = "<group>";
@@ -174,7 +179,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1310;
-				LastUpgradeCheck = 1310;
+				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					1DBF70FD267935220011A618 = {
 						CreatedOnToolsVersion = 12.5;
@@ -215,6 +220,7 @@
 				1DBC2724274855FE00BD5ABD /* imgWriter.cpp in Sources */,
 				1D8C89D926F6C18B001D484B /* utilities.cpp in Sources */,
 				1D2CA6BE27302E2800E3634B /* pngWriter.cpp in Sources */,
+				1DB830C827B6D278004F68EC /* canvas.cpp in Sources */,
 				1DBF7102267935220011A618 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,6 +379,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 883SRFP343;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -388,6 +395,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 883SRFP343;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -403,6 +411,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 883SRFP343;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -415,6 +424,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 883SRFP343;
 				ENABLE_HARDENED_RUNTIME = YES;

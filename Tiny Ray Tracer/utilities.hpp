@@ -28,6 +28,10 @@ struct colour
     colour(double Red = 0, double Green = 0, double Blue = 0, double Alpha = 0) {red = Red; green = Green; blue = Blue; alpha = Alpha;};
 };
 
+const colour black(0, 0, 0);
+const colour white(1, 1, 1);
+const colour midgrey(0.5, 0.5, 0.5);
+
 struct dtuple3
 {
     double x;
