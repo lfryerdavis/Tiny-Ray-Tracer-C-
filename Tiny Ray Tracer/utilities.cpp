@@ -167,6 +167,38 @@ ostream &operator<<(ostream &stream, colourmatrix &obj)
     return stream;
 }
 
+ostream &operator<<(ostream &stream, matrix3x3double &obj)
+{
+    stream << "[ [" << endl;
+    for (int i = 2; i >= 0; i--)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            stream << "  " << obj.mValues[i][j] << endl;
+        }
+        stream << "]" << endl;
+    }
+    stream << "]" << endl;
+
+    return stream;
+}
+
+ostream &operator<<(ostream &stream, matrix4x4double &obj)
+{
+    stream << "[ [" << endl;
+    for (int i = 3; i >= 0; i--)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            stream << "  " << obj.mValues[i][j] << endl;
+        }
+        stream << "]" << endl;
+    }
+    stream << "]" << endl;
+
+    return stream;
+}
+
 void dtuple3::negate()
 {
     x = -x;
@@ -230,6 +262,16 @@ dtuple3 dtuple3::cross(dtuple3 rhs)
     return result;
 }
 
+double dtuple3::operator[](int i)
+{
+    if (i == 0)
+        return x;
+    if (i == 1)
+        return y;
+    if (i == 3)
+        return z;
+    return NAN;
+}
 
 void dtuple4::negate()
 {
@@ -287,5 +329,229 @@ bool dtuple4::isEqual(dtuple4 rhs)
 double dtuple4::dot(dtuple4 rhs)
 {
     return x*rhs.x + y*rhs.y + z*rhs.z + w*rhs.w;
+}
+
+double dtuple4::operator[](int i)
+{
+    if (i == 0)
+        return x;
+    if (i == 1)
+        return y;
+    if (i == 3)
+        return z;
+    if (i == 4)
+        return w;
+    return NAN;
+}
+
+matrix3x3double::matrix3x3double(double values[3][3])
+{
+    for (int row = 0; row < 3; row++)
+    {
+        for (int col = 0; col < 3; col++)
+        {
+            mValues[row][col] = values[row][col];
+        }
+    }
+}
+    
+void matrix3x3double::negate()
+{
+    for (int row = 0; row < 3; row++)
+    {
+        for (int col = 0; col < 3; col++)
+        {
+            mValues[row][col] = -mValues[row][col];
+        }
+    }
+}
+
+void matrix3x3double::multiplyBy(double scalingValue)
+{
+    for (int row = 0; row < 3; row++)
+    {
+        for (int col = 0; col < 3; col++)
+        {
+            mValues[row][col] *= scalingValue;
+        }
+    }
+}
+
+dtuple3 matrix3x3double::multiplyBy(dtuple3 rhs)
+{
+    dtuple3 retVal;
+    vector<double> result;
+    
+    for (int row = 0; row < 3; row++)
+    {
+        double sum = 0;
+        for (int col = 0; col < 3; col++)
+        {
+            sum += mValues[row][col] * rhs[row];
+        }
+        result.push_back(sum);
+    }
+    retVal.x = result[0];
+    retVal.y = result[1];
+    retVal.z = result[2];
+    
+    return retVal;
+}
+
+void matrix3x3double::multiplyBy(matrix3x3double rhs)
+{
+    for (int row = 0; row < 3; row++)
+    {
+        for (int col = 0; col < 3; col++)
+        {
+            double sum = 0;
+            for (int k = 0; k < 3; k++)
+                sum += mValues[row][k] * rhs.mValues[k][col];
+                
+            mValues[row][col] = sum;
+        }
+    }
+}
+
+void matrix3x3double::add(matrix3x3double rhs)
+{
+    for (int row = 0; row < 3; row++)
+    {
+        for (int col = 0; col < 3; col++)
+        {
+            mValues[row][col] += rhs.mValues[row][col];
+        }
+    }
+}
+
+void matrix3x3double::subtract(matrix3x3double rhs)
+{
+    for (int row = 0; row < 3; row++)
+    {
+        for (int col = 0; col < 3; col++)
+        {
+            mValues[row][col] -= rhs.mValues[row][col];
+        }
+    }
+}
+
+bool matrix3x3double::isEqual(matrix3x3double rhs)
+{
+    for (int row = 0; row < 3; row++)
+    {
+        for (int col = 0; col < 3; col++)
+        {
+            if (mValues[row][col] != rhs.mValues[row][col])
+                return false;
+        }
+    }
+
+    return true;
+}
+
+matrix4x4double::matrix4x4double(double values[4][4])
+{
+    for (int row = 0; row < 4; row++)
+    {
+        for (int col = 0; col < 4; col++)
+        {
+            mValues[row][col] = values[row][col];
+        }
+    }
+}
+    
+void matrix4x4double::negate()
+{
+    for (int row = 0; row < 4; row++)
+    {
+        for (int col = 0; col < 4; col++)
+        {
+            mValues[row][col] = -mValues[row][col];
+        }
+    }
+}
+
+void matrix4x4double::multiplyBy(double scalingValue)
+{
+    for (int row = 0; row < 4; row++)
+    {
+        for (int col = 0; col < 4; col++)
+        {
+            mValues[row][col] *= scalingValue;
+        }
+    }
+}
+
+dtuple4 matrix4x4double::multiplyBy(dtuple4 rhs)
+{
+    dtuple4 retVal;
+    vector<double> result;
+    
+    for (int row = 0; row < 4; row++)
+    {
+        double sum = 0;
+        for (int col = 0; col < 4; col++)
+        {
+            sum += mValues[row][col] * rhs[row];
+        }
+        result.push_back(sum);
+    }
+    retVal.x = result[0];
+    retVal.y = result[1];
+    retVal.z = result[2];
+    retVal.w = result[3];
+
+    return retVal;
+}
+
+void matrix4x4double::multiplyBy(matrix4x4double rhs)
+{
+    for (int row = 0; row < 4; row++)
+    {
+        for (int col = 0; col < 4; col++)
+        {
+            double sum = 0;
+            for (int k = 0; k < 4; k++)
+                sum += mValues[row][k] * rhs.mValues[k][col];
+                
+            mValues[row][col] = sum;
+        }
+    }
+}
+
+void matrix4x4double::add(matrix4x4double rhs)
+{
+    for (int row = 0; row < 4; row++)
+    {
+        for (int col = 0; col < 4; col++)
+        {
+            mValues[row][col] += rhs.mValues[row][col];
+        }
+    }
+}
+
+void matrix4x4double::subtract(matrix4x4double rhs)
+{
+    for (int row = 0; row < 4; row++)
+    {
+        for (int col = 0; col < 4; col++)
+        {
+            mValues[row][col] -= rhs.mValues[row][col];
+        }
+    }
+}
+
+bool matrix4x4double::isEqual(matrix4x4double rhs)
+{
+    for (int row = 0; row < 4; row++)
+    {
+        for (int col = 0; col < 4; col++)
+        {
+            if (mValues[row][col] != rhs.mValues[row][col])
+                return false;
+        }
+    }
+
+    return true;
 }
 
